@@ -1,6 +1,6 @@
 Summary:	a plugin for Apache Traffic Server to add the cache lookup status to the client response header
 Name:		trafficserver-add_cache_lookup_status_header-plugin
-Version:	0.1.0
+Version:	0.1.1
 Release:	1%{?dist}
 License:	ASL 2.0
 Group:		System Environment/Daemons
@@ -43,5 +43,8 @@ useradd -r -u 176 -g ats -d / -s /sbin/nologin \
 %{_libdir}/trafficserver/plugins/*.so
 
 %changelog
+* Tue Feb  9 2016 Hiroaki Nakamura <hnakamur@gmail.com> 0.1.1-1
+- Version 0.1.1
+
 * Sat Feb  6 2016 Hiroaki Nakamura <hnakamur@gmail.com> 0.1.0-1
 - Version 0.1.0
