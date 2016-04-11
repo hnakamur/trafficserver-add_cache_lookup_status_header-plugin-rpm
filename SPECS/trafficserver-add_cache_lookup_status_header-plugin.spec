@@ -1,7 +1,9 @@
+%define _prefix /opt/trafficserver
+
 Summary:	a plugin for Apache Traffic Server to add the cache lookup status to the client response header
 Name:		trafficserver-add_cache_lookup_status_header-plugin
 Version:	0.1.1
-Release:	1%{?dist}
+Release:	2%{?dist}
 License:	ASL 2.0
 Group:		System Environment/Daemons
 URL:		https://github.com/hnakamur/%{name}
@@ -18,7 +20,7 @@ the client response header.
 %setup -q
 
 %build
-tsxs -o add_cache_lookup_status_header.so add_cache_lookup_status_header.c
+%{_prefix}/bin/tsxs -o add_cache_lookup_status_header.so add_cache_lookup_status_header.c
 
 %install
 rm -rf %{buildroot}
@@ -43,6 +45,9 @@ useradd -r -u 176 -g ats -d / -s /sbin/nologin \
 %{_libdir}/trafficserver/plugins/*.so
 
 %changelog
+* Mon Apr 11 2016 Hiroaki Nakamura <hnakamur@gmail.com> 0.1.1-2
+- Change prefix to /opt/trafficserver
+
 * Tue Feb  9 2016 Hiroaki Nakamura <hnakamur@gmail.com> 0.1.1-1
 - Version 0.1.1
 
